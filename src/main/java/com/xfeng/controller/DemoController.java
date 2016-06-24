@@ -1,22 +1,20 @@
 package com.xfeng.controller;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.stereotype.Controller;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-@EnableAutoConfiguration
-public class DemoController {
+	@SpringBootApplication
+	@RestController
+	public class DemoController {
 
-    @RequestMapping("/")
-    @ResponseBody
-    String home() {
-        return "Hello World!";
-    }
+	    @RequestMapping("/")
+	    public String greeting() {
+	        return "Hello World!";
+	    }
 
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(DemoController.class, args);
-    }
-}
+	    public static void main(String[] args) {
+	        SpringApplication.run(DemoController.class, args);
+	    }
+	}
