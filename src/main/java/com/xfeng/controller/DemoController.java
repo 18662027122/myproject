@@ -1,20 +1,19 @@
 package com.xfeng.controller;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-	@SpringBootApplication
-	@RestController
-	public class DemoController {
-
-	    @RequestMapping("/")
-	    public String greeting() {
-	        return "Hello World!";
-	    }
-
-	    public static void main(String[] args) {
-	        SpringApplication.run(DemoController.class, args);
-	    }
+@RestController
+@EnableAutoConfiguration
+public class DemoController {
+	@RequestMapping("/")
+	String index() {
+		return "www.yoodb.com";
 	}
+
+	public static void main(String[] args) throws Exception {
+		SpringApplication.run(DemoController.class, args);
+	}
+}
